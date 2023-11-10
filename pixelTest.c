@@ -2,14 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-HDC hDC;;
+HDC hDC;
+HWND hwnd;
 
 void DrawPixel(int x, int y, COLORREF color) {
  SetPixel(hDC, x, y, color);
 }
 int main() {
  hDC = GetDC(NULL);
- HWND hwnd = GetDesktopWindow();
+ hwnd = GetDesktopWindow();
 
  double x,y;
  
