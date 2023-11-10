@@ -20,8 +20,6 @@ int main() {
   y = rect.bottom - rect.top;
  }
 
- printf("x: %d, y: %d\n", x, y);
-
  while(1){
   for(double i=0;i<x;i++){
    for(double m=0;m<y;m++){
@@ -29,6 +27,6 @@ int main() {
    }
   }
  }
- ReleaseDC(NULL, hDC);
+ ReleaseDC(hwnd, hDC);
  return 0;
 }
