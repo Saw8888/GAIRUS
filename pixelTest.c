@@ -21,7 +21,7 @@ int main() {
  while(1){
   for(double i=0;i<x;i++){
    for(double m=0;m<y;m++){
-    SetPixel(hDC, i, m, RGB((int)((i/x)*255),0,0));
+    SetPixel(hDC, i, m, RGB((int)((i/x)*255),(int)((m/y)*255),0));
    }
   }
  }
