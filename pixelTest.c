@@ -2,17 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void DrawPixel(int x, int y, COLORREF color) {
-    // Get the device context for the screen
-    HDC hDC = GetDC(NULL);
+HDC hDC;;
 
+void DrawPixel(int x, int y, COLORREF color) {
     // Set the pixel
     SetPixel(hDC, x, y, color);
-
-    // Release the device context
-    ReleaseDC(NULL, hDC);
 }
 int main() {
+ hDC = GetDC(NULL);
  HWND hwnd = GetDesktopWindow();
  
  // Call the function to draw a red pixel at (100, 100)
@@ -29,10 +26,10 @@ int main() {
  while(1){
   for(double i=0;i<x;i++){
    for(double m=0;m<y;m++){
-    printf("R: %f", i/x);
     DrawPixel(i,m, RGB((int)((i/x)*255),0,0));
    }
   }
  }
+ ReleaseDC(NULL, hDC);
  return 0;
 }
