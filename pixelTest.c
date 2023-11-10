@@ -5,14 +5,12 @@
 HDC hDC;;
 
 void DrawPixel(int x, int y, COLORREF color) {
-    // Set the pixel
-    SetPixel(hDC, x, y, color);
+ SetPixel(hDC, x, y, color);
 }
 int main() {
  hDC = GetDC(NULL);
  HWND hwnd = GetDesktopWindow();
- 
- // Call the function to draw a red pixel at (100, 100)
+
  double x,y;
  
  RECT rect;
