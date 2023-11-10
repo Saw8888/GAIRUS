@@ -1,13 +1,11 @@
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 HDC hDC;
 HWND hwnd;
 
-void DrawPixel(int x, int y, COLORREF color) {
- SetPixel(hDC, x, y, color);
-}
 int main() {
  hDC = GetDC(NULL);
  hwnd = GetDesktopWindow();
@@ -23,7 +21,7 @@ int main() {
  while(1){
   for(double i=0;i<x;i++){
    for(double m=0;m<y;m++){
-    DrawPixel(i,m, RGB((int)((i/x)*255),0,0));
+    SetPixel(hDC, i, m, RGB((int)((i/x)*255),0,0));
    }
   }
  }
