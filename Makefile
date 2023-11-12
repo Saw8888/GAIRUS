@@ -1,4 +1,4 @@
 CFLAGS = -lgdi32 -std=c99
 
-all: pixelTest.c
-	gcc -I -L pixelTest.c $(CFLAGS) -o build/main 
+all: src/pixelTest.c
+	gcc -I -L src/pixelTest.c $(CFLAGS) -o build/main 
